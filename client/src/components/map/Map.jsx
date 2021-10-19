@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react'
 import { Close }from '@mui/icons-material'
 import '../chat/chat.css'
 import './map.css'
+const key = process.env.REACT_APP_API
 
 
 const LocationPin = ({ text }) => (
@@ -16,7 +17,7 @@ function Map({location, commandToChild}) {
           <div className="google-map">
             <button>exit</button>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyCRx_LPfPytH60BNZ39xZ7XfHzqertGYfg' }}
+            bootstrapURLKeys={{ key  }}
             defaultCenter={location}
             defaultZoom={10}
         >

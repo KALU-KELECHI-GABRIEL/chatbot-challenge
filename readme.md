@@ -42,3 +42,7 @@ Message mode only reflect the user's sent message.
 ## `Client side Code Philosophy`
 
 Functional components and Hooks are extensively used in this project. The Chat.jsx houses the lifecycle methods(useEffect hooks) and each's functionality is documented in the codes.
+
+## `Google Map API`
+
+Due to the sensitive nature of exposing an API key. I urge any one using this project to obtain an API key from their google cloud settings and create a .env file in the client directory and insert an entry, REACT_APP_API = obtained_API_key
