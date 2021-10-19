@@ -1,33 +1,18 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import logo from './logo.svg';
-import './App.css';
-import socketClient  from "socket.io-client";
-const SERVER = "http://localhost:7007";
+
+//import components not using layout
+import Login from './components/login/Login';
+import Chat from './components/chat/Chat';
+
 
 function App() {
-  const socket = socketClient(SERVER);
-  socket.on('connection', () => {
-    console.log('Backend connection established');
-  });
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router forceRefresh={true}>
+      <Route exact path='/' component={Login}/>
+      <Route exact path="/chat" component={Chat}/>
+  </Router>
   );
 }
-
 export default App;
